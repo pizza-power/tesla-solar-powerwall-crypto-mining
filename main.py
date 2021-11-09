@@ -93,7 +93,7 @@ if __name__ == "__main__":
             > BATTERY_CHARGE_TO_START_MINING
         ):
             miner.start_miner(client)
-            print("miner is running or will be startedstart")
+            print("miner is running or will be started")
         # powerwall charge is too low, shut off mining
         elif miner.is_running() and (
             api.get_system_status_soe()["percentage"]
@@ -101,5 +101,5 @@ if __name__ == "__main__":
         ):
             print("stopping miner")
             miner.stop_miner(client)
-        # try again in ten minutes
+        # try again in HOW_OFTEN_TO_CHECK seconds
         time.sleep(HOW_OFTEN_TO_CHECK)
